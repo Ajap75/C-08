@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:47:06 by anastruc          #+#    #+#             */
-/*   Updated: 2025/04/04 15:02:03 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/04/04 17:59:26 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ class Span
     public :
     
     unsigned maxSize;
-    Span();
     ~Span();
     Span(int N);
     Span(const Span &other);
     Span& operator = (const Span &other); 
-
+    
     // Nested Exception class
     class SpanIsFullException : public std::exception
     {
@@ -37,18 +36,25 @@ class Span
         public :
         const char * what() const throw();
     };
-
+    
     // Member function
     void addNumber(int nbr);
-    int shortestSpan();
-    int longestSpan();
+    int shortestSpan() const ;
+    int longestSpan() const ;
 
+    void print_vector();
+
+    template <typename InputIterator>
+    void addNumber(InputIterator begin, InputIterator end);
+    private :
     // Attributs
     std::vector<int>array;
+    
+    Span();
         
 };
 
-void print_vector(Span &span);
+#include "../srcs/addNumber.tpp"
 
 
 #endif

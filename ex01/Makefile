@@ -6,7 +6,7 @@
 #    By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2025/04/04 13:13:30 by anastruc         ###   ########.fr        #
+#    Updated: 2025/04/04 18:01:39 by anastruc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,12 @@ BLUE = \033[1;36m
 NC = \033[0m
 
 HEADER = Span.hpp \
+functions.hpp \
 
 
 SRCS = main.cpp \
 Span.cpp \
+VectorGenerator.cpp \
 
 PSRCS = $(addprefix srcs/, $(SRCS))
 

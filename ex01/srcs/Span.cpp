@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 11:01:06 by anastruc          #+#    #+#             */
-/*   Updated: 2025/04/04 15:24:30 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/04/04 16:07:08 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <iostream>
 
 // C&D
-Span::Span() : maxSize(0){}
 
 Span::~Span()
 {
@@ -51,13 +50,13 @@ void Span::addNumber(int nbr)
 
 const char* Span::NotEnoughElementInSpan::what() const throw()
 {
-    return ("\033[1;31mNot enough element in the Span to calculate anything\033[0m\n");
+    return ("\033[1;31mNot enough element in the Span to calculate anything\033[0m");
 }
 const char* Span::SpanIsFullException::what() const throw()
 {
-    return ("\033[1;31mSpan is full\033[0m\n");
+    return ("\033[1;31mSpan is full\033[0m");
 }
-int Span::shortestSpan()
+int Span::shortestSpan() const
 {
     int shortest;
     int prev_elem;
@@ -91,7 +90,7 @@ int Span::shortestSpan()
     return (shortest);
 }
 
-int Span::longestSpan()
+int Span::longestSpan() const
 {
     std::vector<int> copy;
     copy = array;
@@ -103,9 +102,9 @@ int Span::longestSpan()
 }
 
 
-void print_vector(Span &span)
+void Span::print_vector()
 {
-    for(std::vector<int>::iterator it = span.array.begin(); it != span.array.end(); ++it)
+    for(std::vector<int>::iterator it = this->array.begin(); it != this->array.end(); ++it)
     {
         std::cout << GREEN << *it << RESET << std::endl;
     }

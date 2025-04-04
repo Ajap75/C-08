@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:10:16 by anastruc          #+#    #+#             */
-/*   Updated: 2025/04/04 15:32:46 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/04/04 18:10:31 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 #include <algorithm>
 #include "../headers/Span.hpp"
 #include "../headers/Colors.hpp"
+#include "../headers/functions.hpp"
 #include <iostream>
+#include <cstdlib>
+
 
 int main (void)
 {
     //SCOP1
-    std::cout << MAGENTA << "==========TEST #1=========" << std::endl;
+    std::cout << MAGENTA << "==========TEST #1 Short/Longest Functions and Basics =========" << std::endl;
     {
     Span sp = Span(5);
     try
@@ -36,7 +39,7 @@ int main (void)
     }
 
     std::cout << YELLOW << "The original Span : " << std::endl;
-    print_vector(sp);
+    sp.print_vector();
     
     try
     {
@@ -49,12 +52,12 @@ int main (void)
     {
         std::cerr << e.what() << '\n';
     }
-    std::cout << MAGENTA << "=========================" << std::endl;
+    std::cout << MAGENTA << "================================================" << std::endl;
     
     }
     //SCOP2
     std::cout  << std::endl;
-    std::cout << MAGENTA << "==========TEST #2=========" << std::endl;
+    std::cout << MAGENTA << "==========TEST #2 Different Exception =========" << std::endl;
     Span sp = Span(1);
     try
     {
@@ -68,7 +71,7 @@ int main (void)
     }
 
     std::cout << YELLOW << "The original Span : " << std::endl;
-    print_vector(sp);
+    sp.print_vector();
     
     try
     {
@@ -76,10 +79,36 @@ int main (void)
         std::cout << GREEN << sp.shortestSpan() << std::endl;
         std::cout << YELLOW << "The Longest distance between two elements of the Span is : " << std::endl;
         std::cout << GREEN << sp.longestSpan() << std::endl;
+        std::cout << MAGENTA << "=========================" << std::endl;
+
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
+    std::cout << MAGENTA << "================================================================" << std::endl;
 
+    //SCOP3
+    {
+       
+    try
+    {
+        std::cout  << std::endl;
+        std::cout << MAGENTA << "==========TEST #3 : Adding Number using Range of Iterator =========" << std::endl;
+        std::vector<int> Input_vector = VectorGenerator(10000);
+        Span span = Span(10000);
+        span.addNumber(Input_vector.begin(), Input_vector.end());
+        std::cout << YELLOW << "The original Span : " << std::endl;
+        // span.print_vector();
+        std::cout << YELLOW << "The Shortest distance between two elements of the Span is : " << std::endl;
+        std::cout << GREEN << span.shortestSpan() << std::endl;
+        std::cout << YELLOW << "The Longest distance between two elements of the Span is : " << std::endl;
+        std::cout << GREEN << span.longestSpan() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    }
 }
