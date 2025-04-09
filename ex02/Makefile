@@ -6,7 +6,7 @@
 #    By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2025/04/08 15:36:05 by anastruc         ###   ########.fr        #
+#    Updated: 2025/04/09 11:28:41 by anastruc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ PINK = \033[1;35m
 BLUE = \033[1;36m
 NC = \033[0m
 
-HEADER =  \
+HEADER =  MutantStack.hpp \
+
 
 
  
