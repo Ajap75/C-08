@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:47:06 by anastruc          #+#    #+#             */
-/*   Updated: 2025/04/04 17:59:26 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/04/09 15:02:30 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Span
     public :
     
     unsigned maxSize;
+    Span();
     ~Span();
     Span(int N);
     Span(const Span &other);
@@ -50,7 +51,6 @@ class Span
     // Attributs
     std::vector<int>array;
     
-    Span();
         
 };
 
