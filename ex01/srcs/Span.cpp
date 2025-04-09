@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 11:01:06 by anastruc          #+#    #+#             */
-/*   Updated: 2025/04/09 15:03:01 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/04/09 17:40:25 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ const char* Span::SpanIsFullException::what() const throw()
 {
     return ("\033[1;31mSpan is full\033[0m");
 }
-int Span::shortestSpan() const
+unsigned int Span::shortestSpan() const
 {
-    int shortest;
+    unsigned int shortest;
     int prev_elem;
     int elem;
     std::vector<int> copy;
@@ -75,7 +75,7 @@ int Span::shortestSpan() const
     std::sort(copy.begin(), copy.end());
             
     // array.end() point to one spot after the last value in the vector 
-    shortest = std::abs(*(--copy.end()) - *copy.begin());
+    shortest = (unsigned int)(*(--copy.end()) - *copy.begin());
     
     for(std::vector<int>::iterator it = copy.begin(); it != copy.end(); ++it)
     {
@@ -85,15 +85,15 @@ int Span::shortestSpan() const
         if (it != copy.begin())
         {
 
-            if ((std::abs(elem - prev_elem)) < shortest)
-                shortest = std::abs(elem - prev_elem);
+            if ((((unsigned int)elem - (unsigned int)prev_elem) < shortest))
+                shortest = ((unsigned int)elem - (unsigned int)prev_elem);
             prev_elem = elem;
         }
     }
     return (shortest);
 }
 
-int Span::longestSpan() const
+unsigned int Span::longestSpan() const
 {
     std::vector<int> copy;
     copy = array;
@@ -101,7 +101,7 @@ int Span::longestSpan() const
         throw Span::NotEnoughElementInSpan();
     std::sort(copy.begin(), copy.end());
     // array.end() point to one spot after the last value in the vector 
-    return (std::abs(*(--copy.end()) - *copy.begin()));
+    return ((unsigned int)(*(--copy.end()) - *copy.begin()));
 }
 
 

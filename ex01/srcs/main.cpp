@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:10:16 by anastruc          #+#    #+#             */
-/*   Updated: 2025/04/09 15:06:16 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/04/09 17:00:20 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,19 @@
 #include "../headers/functions.hpp"
 #include <iostream>
 #include <cstdlib>
+#include <climits>
 
 
 int main (void)
 {
     //SCOP1
-    std::cout << MAGENTA << "==========TEST #1 Short/Longest Functions and Basics =========" << std::endl;
+    std::cout << MAGENTA << "==========TEST #1 Short/Longest Functions and Basics==========" << std::endl;
     {
     Span sp = Span(5);
     try
     {
-        sp.addNumber(-42);
+        sp.addNumber(INT_MIN);
+        sp.addNumber(INT_MAX);
         sp.addNumber(3);
         sp.addNumber(17);
         sp.addNumber(9);

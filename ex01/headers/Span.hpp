@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:47:06 by anastruc          #+#    #+#             */
-/*   Updated: 2025/04/09 15:02:30 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/04/09 17:35:20 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ class Span
     
     // Member function
     void addNumber(int nbr);
-    int shortestSpan() const ;
-    int longestSpan() const ;
+   unsigned shortestSpan() const ;
+    unsigned longestSpan() const ;
 
     void print_vector();
 
